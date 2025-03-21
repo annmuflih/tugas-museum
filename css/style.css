@@ -211,13 +211,14 @@ header {
    }
 
    .header__title {
-    color: var(--colour-bg-cream);
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     font-family: 'Poppins', sans-serif;
     font-size: 3rem;
    }
 
    .header__text {
-    color: var(--colour-bg-cream);
+    color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
@@ -231,11 +232,665 @@ header {
     border-radius: 4rem;
     font-weight: 500;
     margin-top: 1rem;
-    transition: var(--transition);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
    }
 
    .btn_mulai:hover {
     background: white;
     color: black;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
    }
+   
+   .card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 40px;
+    margin: auto;
+   }
+   .text-container {
+    align-items: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+   }
+   .left-container h1 {
+    font-size: 32px;
+   }
+   .right-container {
+    font-size: 20px;
+   }
+   .book-online {
+    color: white;
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.book-online::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px; /* Position the underline */
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transform: translateX(-50%) scaleX(1); /* Centered underline */
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.book-online:hover {
+    color: #ddd; /* Slight color change */
+}
+
+.book-online:hover::after {
+    transform: translateX(-50%) scaleX(0); /* Shrinks underline to disappear to the middle */
+}
+   .horizontal-line {
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    max-width: auto;
+    margin: 20px auto;
+}
+   @media (max-width: 768px) {
+    .text-container {
+        flex-direction: column;
+    }
+
+    .left-container,
+    .right-container {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}
+
+/* Responsive for 360px and below */
+@media (max-width: 360px) {
+    .text-container {
+        flex-direction: column;
+    }
+
+    .left-container,
+    .right-container {
+        width: 100%;
+    }
+}
    /* End Header */
+
+   /* British Shop */
+   /* Exhibition */
+  
+.exhibitions {
+    text-align: left;
+    padding: 50px 80px;
+    background: black;
+    color: white;
+}
+
+.exhibition-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.exhibition-item {
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.exhibition-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.exhibition-item h2 {
+    background-color: black;
+    color: white;
+    font-size: 1.8em;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.black { background: #981D26; }
+.yellow {background: goldenrod; }
+.dark {background: gray; }
+.dark-gray{background: #DDDAC6}
+
+h3 { font-size: 22px; }
+.highlight { font-size: 18px; font-weight: bold; }
+
+
+.exhibition-info {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+}
+
+.red { background: red; color: white; }
+.dark-gray {background: #DDDAC6; color: white}
+.gray {background: gray; color: white}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+    height: 120px; 
+    object-fit: cover; 
+    border-radius: 5px;
+    }
+
+/* Responsive Media */
+@media screen and (max-width: 768px) {
+    .exhibition-container {
+        flex-direction: column;
+    }
+    .exhibition-item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .exhibition-container {
+        flex-direction: column;
+    }
+    .exhibition-item {
+        width: 100%;
+        min-height: auto;
+    }
+}
+/* End Exhibition */
+/* Visit */
+.visit-section {
+    padding: 50px 80px;
+    background: black;
+    color: white;
+}
+
+.visit-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.visit-card {
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.visit-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.visit-content {
+    padding: 20px;
+}
+
+.visit-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.visit-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.visit-card:hover {
+    transform: scale(1.05);
+}
+
+.visit-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.visit-card-content {
+    padding: 15px;
+}
+
+.visit-card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .visit-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .visit-card {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 95%;
+        margin-bottom: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
+}
+/* End of Visit */
+
+/* Collection */
+.collection {
+    background: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.collection h2 {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.see-all {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.see-all:hover {
+    text-decoration: underline;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    height: 450px;
+    width: 350px;
+    background: #222;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    text-decoration: underline 2px solid white;
+    text-underline-offset: 10px;
+}
+
+.carousel-item h3 {
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    flex-grow: 1;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: black;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button.prev:hover, button.next:hover {
+    background: #4f4f4f;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .carousel {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+
+    button.prev, button.next {
+        display: none;
+    }
+}
+
+/* End Of Collection */
+
+/* Museum Shop */
+.shop {
+    background: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.shop h2 {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.see-all {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.see-all:hover {
+    text-decoration: underline;
+}
+
+.carousel-shop {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-tracks {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousels-item {
+    height: 450px;
+    width: 350px;
+    background: #222;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.carousels-item:hover {
+    transform: scale(1.05);
+}
+
+.carousels-item h3 {
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.carousels-item img {
+    max-width: 100%;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    flex-grow: 1;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: black;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button.prev:hover, button.next:hover {
+    background: #4f4f4f;
+    color: white;
+}
+/* End of Shop */
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-title {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    background-color: #4f4f4f; 
+}
+
+.social-links Ion-Icon {
+    font-size: 25px;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.newsletter {
+    margin-top: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #555;
+    background: #222;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.newsletter button:hover {
+    background-color: #4f4f4f;
+    color: white;
+}
+
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.column {
+    width: 20%;
+    min-width: 180px;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin: 5px 0;
+}
+
+.column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.column ul li a:hover {
+    color: #4f4f4f;
+}
+
+@media (max-width: 900px) {
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .newsletter input {
+        width: 100%;
+    }
+}
+
+/* End of Footer */
