@@ -324,12 +324,10 @@ header {
 }
    /* End Header */
 
-   /* British Shop */
    /* Exhibition */
-  
 .exhibitions {
     text-align: left;
-    padding: 50px 80px;
+    padding: 3%;
     background: black;
     color: white;
 }
@@ -340,16 +338,72 @@ header {
     justify-content: space-between;
 }
 
+.exhibition-item p {
+    margin-bottom: 15px;
+}
+.exhibition-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+}
 .exhibition-item {
-    width: 30%;
+    background-color: #1d1d1d;
+    color: white;
+    width: 100%;
     padding: 20px;
     border-radius: 5px;
     position: relative;
 }
+.exhibition-item.black:hover {
+    background: #EF4036;
+}
 
-.exhibition-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+.exhibition-item.black:hover .badge.red {
+    background-color: black;
+    color: #EF4036;
+}
+.exhibition-item.dark-gray:hover {
+    background-color: #DDDAC6;
+}
+
+.exhibition-item.dark-gray:hover .badge.dark-gray {
+    background-color: #1D1D1D;
+    color: #DDDAC6;
+}
+.exhibition-item.yellow:hover {
+    background-color: #FDDD00;
+}
+
+.exhibition-item.yellow:hover .badge.yellow {
+    background-color: #1D1D1D;
+    color: #FDDD00;
+}
+.badge.red {
+    background: #EF4036; 
+    color: black; 
+    padding: 5px 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.badge.dark-gray {
+    background: #DDDAC6; 
+    color: black; 
+    padding: 5px 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.badge.yellow {
+    background: #FDDD00; 
+    color: black; 
+    padding: 5px 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.exhibition-item .badge.red:hover {
+    background: #1d1d1d;
+    color: #EF4036;
 }
 
 .exhibition-item h2 {
@@ -361,10 +415,7 @@ header {
     border-radius: 5px;
 }
 
-.black { background: #981D26; }
-.yellow {background: goldenrod; }
-.dark {background: gray; }
-.dark-gray{background: #DDDAC6}
+
 
 h3 { font-size: 22px; }
 .highlight { font-size: 18px; font-weight: bold; }
@@ -385,22 +436,23 @@ h3 { font-size: 22px; }
     font-size: 12px;
 }
 
-.red { background: red; color: white; }
-.dark-gray {background: #DDDAC6; color: white}
-.gray {background: gray; color: white}
-
 img {
     width: 100%;
     border-radius: 5px;
-    height: 120px; 
+    height: 300px; 
     object-fit: cover; 
     border-radius: 5px;
     }
 
 /* Responsive Media */
 @media screen and (max-width: 768px) {
+    .exhibitions {
+        width: 100%;
+        padding: 8%;
+    }
     .exhibition-container {
         flex-direction: column;
+        width: 100%;
     }
     .exhibition-item {
         width: 100%;
@@ -413,13 +465,13 @@ img {
     }
     .exhibition-item {
         width: 100%;
-        min-height: auto;
     }
 }
 /* End Exhibition */
 /* Visit */
 .visit-section {
-    padding: 50px 80px;
+    width: 100%;
+    padding: 3%;
     background: black;
     color: white;
 }
@@ -427,14 +479,14 @@ img {
 .visit-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
 
 .visit-card {
     background: #222;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out;
@@ -481,12 +533,16 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+    .visit-section {
+        width: 100%;
+        padding: 8%;
+    }
     .visit-card-container {
         flex-direction: column;
         align-items: center;
     }
     .visit-card {
-        width: 80%;
+        width: 100%;
     }
 }
 
@@ -502,7 +558,7 @@ img {
     }
 
     .card {
-        width: 95%;
+        width: 100%;
         margin-bottom: 20px;
     }
 
@@ -584,6 +640,7 @@ img {
     transform: scale(1.05);
     text-decoration: underline 2px solid white;
     text-underline-offset: 10px;
+
 }
 
 .carousel-item h3 {
