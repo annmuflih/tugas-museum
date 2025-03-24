@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let index = 0;
 
         nextButton.addEventListener("click", function () {
-            if (index < items.length - 3) { // Adjust based on visible items
+            const visibleItems = Math.floor(container.offsetWidth / itemWidth);
+            if (index < items.length - visibleItems) {
                 index++;
                 track.style.transform = `translateX(-${index * itemWidth}px)`;
             }
@@ -31,6 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize Collection carousel
     setupCarousel(".collection", ".carousel-track", ".carousel-item", ".collection .prev", ".collection .next");
 
-    // Initialize Shop carousel
+    // Initialize Shop carousel (ensure class names are correct)
     setupCarousel(".shop", ".carousel-tracks", ".carousels-item", ".shop .prev", ".shop .next");
 });
