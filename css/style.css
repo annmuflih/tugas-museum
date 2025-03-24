@@ -51,7 +51,7 @@ nav{
     padding: 18px 0;
 }
 .navbar-list a {
-    color: white; /* Change text color */
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
@@ -98,7 +98,7 @@ nav{
 }
 
 .navbar-button:hover{
-    color: #981D26;
+    color: black;
     background: white;
 }
 
@@ -162,15 +162,6 @@ header {
     justify-content: center;
     height: 100vh;
    }
-
-   /* .bg-image {
-    background-image: url('../img/british-museum-bg.jpg');
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-   } */
 
    video {
     width: 100%;
@@ -356,7 +347,9 @@ header {
 .exhibition-item.black:hover {
     background: #EF4036;
 }
-
+.badge {
+    cursor: pointer;
+}
 .exhibition-item.black:hover .badge.red {
     background-color: black;
     color: #EF4036;
@@ -436,7 +429,7 @@ h3 { font-size: 22px; }
     font-size: 12px;
 }
 
-img {
+.exhibition-img {
     width: 100%;
     border-radius: 5px;
     height: 300px; 
@@ -480,8 +473,6 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
-    align-items: center;
 }
 
 .visit-card {
@@ -610,7 +601,7 @@ img {
 
 .carousel {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow: hidden;
 }
@@ -619,6 +610,8 @@ img {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    width: max-content;
 }
 
 .carousel-item {
@@ -634,6 +627,7 @@ img {
     align-items: center;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
 .carousel-item:hover {
@@ -690,18 +684,38 @@ button.prev:hover, button.next:hover {
 
 @media (max-width: 768px) {
     .carousel-container {
-        overflow-x: auto;
-        scrollbar-width: none;
+        width: 100%;
+        padding: 0 10px;
     }
-
+    
     .carousel {
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
+        overflow-x: hidden;
     }
-
+    
+    .carousel-track {
+        gap: 15px;
+    }
+    
+    .carousel-item {
+        width: calc(100vw - 40px);
+        height: 400px;
+        margin: 0 auto;
+    }
+    
     button.prev, button.next {
-        display: none;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    button.prev { left: 5px; }
+    button.next { right: 5px; }
+    
+    .collection h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -745,7 +759,7 @@ button.prev:hover, button.next:hover {
 
 .carousels {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow: hidden;
 }
@@ -754,6 +768,8 @@ button.prev:hover, button.next:hover {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    width: max-content;
 }
 
 .carousels-item {
@@ -768,6 +784,7 @@ button.prev:hover, button.next:hover {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+    border-radius: 5px;
 }
 
 .carousels-item:hover {
@@ -818,6 +835,43 @@ button.next { right: 10px; }
 button.prev:hover, button.next:hover {
     background: #4f4f4f;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .carousel-shop {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .carousels {
+        overflow-x: hidden;
+    }
+    
+    .carousel-tracks {
+        gap: 15px;
+    }
+    
+    .carousels-item {
+        width: calc(100vw - 40px);
+        height: 400px;
+        margin: 0 auto;
+    }
+    
+    button.prev, button.next {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    button.prev { left: 5px; }
+    button.next { right: 5px; }
+    
+    .shop h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 /* End of Shop */
 
@@ -946,6 +1000,11 @@ footer {
 
 @media (max-width: 500px) {
     .newsletter input {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .newsletter button {
+        margin-top: 10px;
         width: 100%;
     }
 }

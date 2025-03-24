@@ -19,43 +19,43 @@
 </head>
 <body>
     <!-- Navbar -->
-<nav>
-    <ul class="navbar-list">
-        <li class="logo">
-            <a href="#">MUSEUM BEKASI</a>
-        </li>
-        <li class="toggle">
-            <img src="img/burger-menu.png"alt="Bars">
-        </li>
-        <li class="navbar-item">
-            <a href="#" class="navbar-link">Exhibition</a>
-        </li>
-        <li class="navbar-item">
-            <a href="#" class="navbar-link">Visit</a>
-        </li>
-        <li class="navbar-item">
-            <a href="#" class="navbar-link">Collection</a>
-        </li>
-        <li class="navbar-item">
-            <a href="https://wa.me/6281586756523?text=Halo+kamu+mau+order+job+sama+aku+ya+?" class="navbar-button" target="_blank">Book Ticket</a>
-        </li>
-    </ul>
-</nav>
+    <nav>
+        <ul class="navbar-list">
+            <li class="logo">
+                <a href="#">MUSEUM BEKASI</a>
+            </li>
+            <li class="toggle" id="menu-toggle">
+                <img src="img/burger-menu.png" alt="Bars">
+            </li>
+            <li class="navbar-item"><a href="#exhibition" class="navbar-link">Exhibition</a></li>
+            <li class="navbar-item"><a href="#visit" class="navbar-link">Visit</a></li>
+            <li class="navbar-item"><a href="#collection" class="navbar-link">Collection</a></li>
+            <li class="navbar-item"><a href="#shop" class="navbar-link">Shop</a></li>
+            <li class="navbar-item"><a href="https://wa.me/6281586756523?text=Halo+kamu+mau+order+job+sama+aku+ya+?" class="navbar-button" target="_blank">Book Ticket</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            let items = document.querySelectorAll(".navbar-item");
+            items.forEach(item => {
+                item.classList.toggle("show");
+            });
+        });
+    </script>
 <!-- End Navbar -->
 <!-- Header -->
 <header>
-<!-- <div class="bg-image"></div> -->
 <div class="video-container">
     <video autoplay loop muted playsinline>
       <source src="video/bg-video.mp4" type="video/mp4">
     </video>
   </div>
-<!-- <div class="bg-video"></div> -->
 <div class="container header__container">
     <div class="header__content">
         <h1 class="header__title">WELCOME TO<br>MUSEUM EXHIBITION</h1>
         <p class="header__text">Exhibition Every Rare Species in Bekasi</p>
-        <a href="#scroll-works" class="btn_mulai">⬇ Start</a>
+        <a href="#exhibition" class="btn_mulai">⬇ Start</a>
     </div>
 </div>
 </header>
@@ -90,6 +90,7 @@
 <!-- British Shop -->
 
 <!-- Exhibitions -->
+<div id="exhibition"></div>
 <section class="exhibitions">
     <h2>Exhibitions</h2>
     <div class="exhibition-container">
@@ -98,27 +99,28 @@
             <p class="highlight">printmaker</p>
             <p class="exhibition-info">Exhibition<br>7 November 2024 – 30 March 2025</p>
             <span class="badge red">Final weeks</span>
-            <img src="img/img-picasso.jpg" alt="Picasso artwork">
+            <img class="exhibition-image" src="img/img-picasso.jpg" alt="Picasso artwork">
         </div>
         <div class="exhibition-item dark-gray">
             <h3>Hiroshige</h3>
             <p class="highlight">artist of the open road</p>
             <p class="exhibition-info">Exhibition<br>1 May – 7 September 2025</p>
             <span class="badge dark-gray">Book now</span>
-            <img src="img/img-hiroshige.jpg" alt="Hiroshige artwork">
+            <img class="exhibition-image" src="img/img-hiroshige.jpg" alt="Hiroshige artwork">
         </div>
         <div class="exhibition-item yellow">
-            <h3>Ancient India</h3>
+            <h3>Old India</h3>
             <p class="highlight">living traditions</p>
             <p class="exhibition-info">Exhibition<br>22 May – 19 October 2025</p>
             <span class="badge yellow">Book now</span>
-            <img src="img/img-ancient-india.jpg" alt="Ancient India artwork">
+            <img class="exhibition-image" src="img/img-ancient-india.jpg" alt="Ancient India artwork">
         </div>
     </div>
 </section>
 <!-- End of exhibition -->
 
 <!-- Visit -->
+ <div id="visit"></div>
 <section class="visit-section">
     <h2>Visit the Museum</h2>
     <div class="visit-container">
@@ -155,6 +157,7 @@
 <!-- End of Visit -->
 
 <!-- Collection -->
+<div id="collection"></div>
 <section class="collection">
     <h2>Explore the collection <a href="#" class="see-all">See all →</a></h2>
     <div class="carousel-container">
@@ -193,8 +196,9 @@
 <!-- End Of Collectiom -->
 
 <!-- Museum Shop -->
+ <div id="shop"></div>
 <section class="shop">
-    <h2>Welcome to The Museum Bekasi Shop <a href="#" class="see-all">See all →</a></h2>
+    <h2>Welcome to The Museum Bekasi Shop <a href="#" class="see-all">Shop now →</a></h2>
     <div class="carousel-shop">
       <div class="carousels">
         <button class="prev">&#10094;</button>
@@ -240,7 +244,7 @@
         </div>
   
         <div class="newsletter">
-          <label for="email">Enter your email address to receive our newsletter</label>
+          <label for="email">Subscribe to receive our newsletter</label>
           <input type="email" id="email" placeholder="Your email">
          <button>Sign up</button>
         </div>
