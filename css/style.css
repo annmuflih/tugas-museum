@@ -35,121 +35,104 @@ img {
 }
 
 /* === navbar === */
-nav{
+nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 99;
+    background: black;
 }
 
-.navbar-list{
-    background: black;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: 50px;
+    cursor: point;
+}
+
+.navbar-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 0;
+    padding: 18px 20px;
 }
+
 .navbar-list a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-.navbar-item{
-    color: white;
+.navbar-item {
     margin: 0 20px;
 }
 
-.navbar-item:last-child{
-    margin-right: 50px;
-}
-
-.toggle{
-    margin: 0 20px;
+.toggle {
     display: none;
-    color: white;
+    cursor: pointer;
+    width: 40px;
 }
 
-.navbar-link{
-    font-weight: bold;
+.nav-items {
+    display: flex;
+    align-items: center;
 }
 
-.navbar-link:hover{
-    color: white;
-}
-
-.logo{
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: auto;
-    margin-left: 50px; 
-    cursor: point;
-}
-
-.navbar-button{
+.navbar-button {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: transparent;
     border: 1px solid #DDDAC6;
     border-radius: 0.8rem;
-    color: var(--colour-bg2);
-    transition: var(--transition);
+    color: white;
+    transition: 0.3s;
 }
 
-.navbar-button:hover{
+.navbar-button:hover {
     color: black;
     background: white;
 }
 
-@media screen and (max-width:912px) {
-    .navbar-list {
-        flex-wrap: wrap;
-    }
-
+@media screen and (max-width: 912px) {
     .toggle {
         display: block;
-        width: 30px;
+        width: 35px;
+    }
+
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-items.active {
+        display: flex;
     }
 
     .navbar-item {
-        display: none;
-        width: 100%;
-        text-align: center;
-        margin: 20px;
+        margin: 10px 0;
     }
 
     .navbar-button {
-        display: block;
-    }
-
-    .active {
-        display: block;
-    }
-
-    .container {
-        width: 95%;
+        width: 100%;
+        margin: 10px auto;
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .logo {
-        font-size: 1.25;
-    }
-    .toggle {
-        width: 25px;
-    }
-}
-
-
-@media screen and (max-width:390px) {
-
-    .logo {
-        size: 1rem;
+        font-size: 1.25rem;
+        margin-left: 0px;
     }
 
     .toggle {
-        width: 20px;
+        width: 25px;
     }
 }
 /* === end navbar === */
@@ -567,7 +550,7 @@ h3 { font-size: 22px; }
 .collection {
     background: black;
     color: white;
-    padding: 40px 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -982,30 +965,14 @@ footer {
     color: #4f4f4f;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 768px) {
     .footer-columns {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .column {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .social-links {
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-
-@media (max-width: 500px) {
-    .newsletter input {
-        width: 100%;
-        margin-top: 10px;
-    }
-    .newsletter button {
-        margin-top: 10px;
-        width: 100%;
+@media screen and (max-width: 360px) {
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
