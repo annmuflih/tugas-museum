@@ -34,4 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize Shop carousel (ensure class names are correct)
     setupCarousel(".shop", ".carousel-tracks", ".carousels-item", ".shop .prev", ".shop .next");
+
+    // Burger Menu
+    document.getElementById('toggle-menu').addEventListener('click', function () {
+        document.getElementById('nav-items').classList.toggle('active');
+    });
 });
